@@ -1,0 +1,19 @@
+<nav>
+  <%= @image.name %>
+</nav>
+
+<nav>
+  <%= @image.description %>
+</nav>
+
+<%= image_tag @image.url %>
+
+<nav>
+  <%= link_to "Edit", edit_gallery_image_path %>
+</nav>
+<nav>
+  <%= link_to "Delete", gallery_image_path, method: :delete, data: { confirm: "Are you sure?"}%>
+</nav>
+
+<%= link_to "Back", galleries_path %>
+

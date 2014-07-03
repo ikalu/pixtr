@@ -1,0 +1,9 @@
+
+<%= form_for([gallery, image]) do |form| %>
+  Name: <%= form.text_field :name %> <br />
+  Description: <%= form.text_area :description %> <br />
+  Url: <%= form.text_field :url %> <br />
+
+  <%= form.submit %>
+<% end %>
+

@@ -1,0 +1,7 @@
+<h1>Members only</h1>
+
+<%= form_for :session, url: session_path do |form|%>
+  Email: <%= form.text_field :email %> <br />
+<%= form.submit "Sign in" %>
+
+<%end%>
