@@ -14,7 +14,7 @@ class ImagesController < ApplicationController
     @image = @gallery.images.new(image_params)
  
     if @image.save
-      redirect_to gallery
+      redirect_to @gallery
     else
       render :new
     end
