@@ -8,4 +8,9 @@ class SessionsController < ApplicationController
     redirect_to galleries_path
   end
 
+  def destroy
+    cookies.delete(:user_id)
+    redirect_to galleries_path
+  end
+
 end
