@@ -1,6 +1,7 @@
 class GalleriesController < ApplicationController
+  before_action :require_login
   def index
-    @galleries = Gallery.all
+    @user = current_user
   end
 
   def new
@@ -8,12 +9,13 @@ class GalleriesController < ApplicationController
   end
 
   def create
-    Gallery.create(gallery_params)
-    redirect_to "/galleries"
+    params_with_user_id = gallery_params.merge(user_id: current_user.id)
+    @gallery = Gallery.create(params_with_user_id)
+    redirect_to current_user
   end
 
   def show
-    @gallery = Gallery.find(params[:id])
+    @gallery =Gallery.find(params[:id])
   end
 
   def edit

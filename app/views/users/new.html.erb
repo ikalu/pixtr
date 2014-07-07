@@ -1,11 +1,5 @@
 <h2> New User </h2>
 
-<%=form_for(@user) do |form| %>
-<nav>
-  Email: <%= form.text_field :email %>
-</nav>
-<%=form.submit %>
-
-<% end %>
+<%= render "sign_up_form", user: @user %>
 
 

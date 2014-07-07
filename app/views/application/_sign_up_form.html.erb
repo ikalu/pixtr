@@ -1,0 +1,13 @@
+<h2> New User </h2>
+
+<%=form_for(user) do |form| %>
+  <nav>
+    Email: <%= form.email_field :email %>
+  </nav>
+  <nav>
+    Password: <%= form.password_field :password %>
+  </nav>
+  <%=form.submit %>
+
+<% end%>
+

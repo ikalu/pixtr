@@ -37,6 +37,7 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'monban', '~> 0.1.0'
 group :production do
   gem 'rails_12factor'
   gem 'thin'
