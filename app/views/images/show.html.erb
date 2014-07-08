@@ -17,3 +17,9 @@
 
 <%= link_to "Back", galleries_path %>
 
+<%= render @image.comments %>
+
+<%= form_for([@gallery, @image, @comment]) do |form|%>
+<%= form.text_area :content %>
+<%= form.submit "Post" %>
+<%end%>
