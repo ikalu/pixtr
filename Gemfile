@@ -38,7 +38,11 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'monban', '~> 0.1.0'
+group :development do
+  gem 'quiet_assets'
+end
 group :production do
   gem 'rails_12factor'
   gem 'thin'
 end
+gem 'acts-as-taggable-on'

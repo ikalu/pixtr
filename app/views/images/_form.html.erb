@@ -1,9 +1,9 @@
+<%= render "errors", object: form.object %>
 
-<%= form_for([gallery, image]) do |form| %>
   Name: <%= form.text_field :name %> <br />
   Description: <%= form.text_area :description %> <br />
   Url: <%= form.text_field :url %> <br />
 
-  <%= form.submit %>
-<% end %>
-
+<div>
+  <%= form.collection_check_boxes :group_ids, current_user.groups, :id, :name %>
+</div>

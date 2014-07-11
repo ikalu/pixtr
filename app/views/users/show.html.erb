@@ -1,6 +1,9 @@
 <%= @user.email %>'s Galleries <br />
 
 <hr />
-<%= link_to "New Gallery", "/galleries/new" %>
+<%= link_to "New Gallery", "/galleries/new" %><br />
+<%= link_to "Create Groups", "/groups/new" %>
 
 <%= render @user.galleries %>
+
+<%= link_to "Back", root_path %>

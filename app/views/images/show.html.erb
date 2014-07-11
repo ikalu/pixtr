@@ -13,13 +13,25 @@
 </nav>
 <nav>
   <%= link_to "Delete", gallery_image_path, method: :delete, data: { confirm: "Are you sure?"}%>
-</nav>
 
+</nav>
+<div class="likes">
+  <p><%= pluralize(@image.likes.size, "Like") %></p>
+
+  <% if current_user.likes?(@image) %>
+    <%= link_to "Unlike", [@image.gallery, @image, :like], method: :delete %>
+  <% else %>
+    <%= link_to "Like", [@image.gallery, @image, :like], method: :post %> :D
+  <% end %>
+</div>
+
+<div class="comments">
+  <%= render @image.comments %>
+
+  <%= form_for([@gallery, @image, @comment]) do |form| %>
+    <%= form.text_area :content %>
+      <%= form.submit "Post" %>
+  <% end %>
+</div>
 <%= link_to "Back", galleries_path %>
 
-<%= render @image.comments %>
-
-<%= form_for([@gallery, @image, @comment]) do |form|%>
-<%= form.text_area :content %>
-<%= form.submit "Post" %>
-<%end%>
