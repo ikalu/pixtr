@@ -9,12 +9,20 @@
 <%= image_tag @image.url %>
 
 <nav>
+  Tags:
+  <%@image.tags.each do |tag| %>
+    <%= link_to tag, tag_path(tag.id) %>
+  <%end%>
+</nav>
+
+<nav>
   <%= link_to "Edit", edit_gallery_image_path %>
 </nav>
 <nav>
   <%= link_to "Delete", gallery_image_path, method: :delete, data: { confirm: "Are you sure?"}%>
 
 </nav>
+
 <div class="likes">
   <p><%= pluralize(@image.likes.size, "Like") %></p>
 

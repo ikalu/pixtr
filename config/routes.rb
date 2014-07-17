@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show]
   resource :dashboard, only: [:show]
+  resources :tags, only: [:show]
   resources :galleries do
     resources :images do
       resources :comments, only: [:create]
